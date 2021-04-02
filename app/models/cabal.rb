@@ -1,0 +1,2 @@
+class Cabal < ApplicationRecord
+end
