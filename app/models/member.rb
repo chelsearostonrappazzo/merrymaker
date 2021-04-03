@@ -1,4 +1,5 @@
 class Member < ApplicationRecord
-  has_many :cabals
-  has_many :users
+  belongs_to :user
+  belongs_to :cabal
+  belongs_to :celebration
 end

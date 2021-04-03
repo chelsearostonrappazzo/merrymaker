@@ -20,3 +20,13 @@
 # Celebration.create(name: "Bach Macabre", occasion: "Bachelorette Party", theme: "Gothic Regency Core", colors: "Indigo and Gold", signature_drink: "Black Velvet", location: "Castle Otranto")
 # Celebration.create(name: "She Said Oui", occasion: "Bachelorette Party", theme: "French Elegance", colors: "Gold, Navy and Crimson", signature_drink: "Malmsey Wine", location: "Calais")
 # Celebration.create(name: "BACH-analia", occasion: "Bachelorette Party", theme: "Garden of Innocence", colors: "Rose pink and Forest Green", signature_drink: "Champagne", location: "Gardens at Hampton Court Palace")
+
+# Member.create!(user_id: 1, cabal_id: 2)
+# Member.create!(user_id: 4, cabal_id: 2)
+
+# Member.create!(user_id: 5, cabal_id: 2)
+# Member.create!(user_id: 2, cabal_id: 1)
+# Member.create!(user_id: 3, cabal_id: 1)
+# Member.create!(user_id: 6, cabal_id: 1)
+# Member.create!(user_id: 6, cabal_id: 3)
+# Member.create!(user_id: 3, cabal_id: 3)

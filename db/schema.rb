@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_02_200158) do
+ActiveRecord::Schema.define(version: 2021_04_03_004933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cabals", force: :cascade do |t|
     t.string "name"
-    t.integer "celebration_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -41,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_04_02_200158) do
     t.integer "cabal_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "celebration_id"
   end
 
   create_table "users", force: :cascade do |t|
