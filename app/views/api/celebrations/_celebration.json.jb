@@ -1,0 +1,11 @@
+{
+  name: celebration.name,
+  occasion: celebration.occasion,
+  theme: celebration.theme,
+  colors: celebration.colors,
+  signature_drink: celebration.signature_drink,
+  location: celebration.location,
+  activity: celebration.activity,
+  notes: celebration.notes,
+
+}
