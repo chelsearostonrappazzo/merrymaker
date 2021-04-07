@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_03_015822) do
+ActiveRecord::Schema.define(version: 2021_04_06_210829) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "cabals", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "celebrations", force: :cascade do |t|
     t.string "name"
+    t.string "occasion"
     t.string "theme"
     t.string "colors"
     t.string "signature_drink"
@@ -31,16 +31,21 @@ ActiveRecord::Schema.define(version: 2021_04_03_015822) do
     t.text "notes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "cabal_id"
-    t.string "occasion"
   end
 
   create_table "members", force: :cascade do |t|
     t.integer "user_id"
     t.integer "cabal_id"
+    t.integer "celebration_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "celebration_id"
+    t.boolean "celebrant", default: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -51,7 +56,6 @@ ActiveRecord::Schema.define(version: 2021_04_03_015822) do
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "admin", default: false
   end
 
 end
