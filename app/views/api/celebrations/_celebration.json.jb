@@ -1,5 +1,6 @@
 {
   name: celebration.name,
+  celebrant: celebration.user.first_name,
   occasion: celebration.occasion,
   theme: celebration.theme,
   colors: celebration.colors,
@@ -7,5 +8,7 @@
   location: celebration.location,
   activity: celebration.activity,
   notes: celebration.notes,
+  cabal: celebration.cabal.name,
+  members: celebration.users,
 
 }

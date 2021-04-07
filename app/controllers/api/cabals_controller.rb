@@ -15,10 +15,10 @@ class Api::CabalsController < ApplicationController
   def create
     @cabal = Cabal.new(
       name: params[:name],
+      user_id: current_user,
     )
     #happy/sad path
     if @cabal.save
-      Member.create(cabal_id: @cabal.id, user_id: current_user.id)
       render "show.json.jb"
     else
       render json: { errors: @cabal.errors.full_messages }, status: 406
@@ -26,21 +26,14 @@ class Api::CabalsController < ApplicationController
   end
 
   def update
-    celebration_id = params[:id]
-    @celebration = Celebration.find(celebration_id)
-    @celebration.name = params[:name] || @celebration.name
-    @celebration.occasion = params[:occasion] || @celebration.occasion
-    @celebration.theme = params[:theme] || @celebration.theme
-    @celebration.colors = params[:colors] || @celebration.colors
-    @celebration.signature_drink = params[:signature_drink] || @celebration.signature_drink
-    @celebration.location = params[:location] || @celebration.location
-    @celebration.activity = params[:activity] || @celebration.activity
-    @celebration.notes = params[:notes] || @celebration.notes
+    cabal_id = params[:id]
+    @cabal = Cabal.find(cabal_id)
+    @cabal.name = params[:name] || @cabal.name
 
-    if @celebration.save
+    if @cabal.save
       render "show.json.jb"
     else
-      render json: { errors: @celebration.errors.full_messages }, status: 406
+      render json: { errors: @cabal.errors.full_messages }, status: 406
     end
   end
 end

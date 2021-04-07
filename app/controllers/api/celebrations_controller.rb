@@ -26,7 +26,6 @@ class Api::CelebrationsController < ApplicationController
     )
     #happy/sad path
     if @celebration.save
-      Member.create(celebration_id: @celebration.id, user_id: current_user.id)
       render "show.json.jb"
     else
       render json: { errors: @celebration.errors.full_messages }, status: 406
@@ -36,19 +35,23 @@ class Api::CelebrationsController < ApplicationController
   def update
     celebration_id = params[:id]
     @celebration = Celebration.find(celebration_id)
-    @celebration.name = params[:name] || @celebration.name
-    @celebration.occasion = params[:occasion] || @celebration.occasion
-    @celebration.theme = params[:theme] || @celebration.theme
-    @celebration.colors = params[:colors] || @celebration.colors
-    @celebration.signature_drink = params[:signature_drink] || @celebration.signature_drink
-    @celebration.location = params[:location] || @celebration.location
-    @celebration.activity = params[:activity] || @celebration.activity
-    @celebration.notes = params[:notes] || @celebration.notes
-
-    if @celebration.save
-      render "show.json.jb"
+    if current_user.id == @celebration.user.id
+      @celebration.name = params[:name] || @celebration.name
+      @celebration.occasion = params[:occasion] || @celebration.occasion
+      @celebration.theme = params[:theme] || @celebration.theme
+      @celebration.colors = params[:colors] || @celebration.colors
+      @celebration.signature_drink = params[:signature_drink] || @celebration.signature_drink
+      @celebration.location = params[:location] || @celebration.location
+      @celebration.activity = params[:activity] || @celebration.activity
+      @celebration.notes = params[:notes] || @celebration.notes
+      @celebration.status = params[:status] || @celebration.status
+      if @celebration.save
+        render "show.json.jb"
+      else
+        render json: { errors: @celebration.errors.full_messages }, status: 406
+      end
     else
-      render json: { errors: @celebration.errors.full_messages }, status: 406
+      render json: { errors: "This isn't about you! Only the Celebrant can update!" }
     end
   end
 end
