@@ -1,0 +1,3 @@
+@cabals.map do |cabal|
+  render partial: "cabal.json.jb", locals: { cabal: cabal }
+end

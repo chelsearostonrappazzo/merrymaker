@@ -1,0 +1,1 @@
+render partial: "cabal.json.jb", locals: {cabal: @cabal}

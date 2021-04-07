@@ -1,7 +1,8 @@
 class Api::UsersController < ApplicationController
   def create
     user = User.new(
-      name: params[:name],
+      first_name: params[:first_name],
+      last_name: params[:last_name],
       email: params[:email],
       password: params[:password],
       password_confirmation: params[:password_confirmation],
@@ -22,7 +23,7 @@ class Api::UsersController < ApplicationController
   def update
     user_id = params[:id]
     @user = User.find(user_id)
-    @user.first_name = params[:first_name] || @user.first_name
+    @user.last_name = params[:first_name] || @user.first_name
     @user.last_name = params[:last_name] || @user.last_name
     @user.email = params[:email] || @user.email
     @user.image = params[:image] || @user.image

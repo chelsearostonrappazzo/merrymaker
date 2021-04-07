@@ -6,12 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# User.create(first_name: "Catherine", last_name: "Morland", email: "udolpho5ever@example.com", password_digest: "password", image: "https://www.yorknotes.com/images/onlineguides/a-level/Northanger-Abbey/Catherine-Morland-with-bonnet.jpg")
-# User.create(first_name: "Anne", last_name: "Boleyn", email: "losingmyhead@example.com", password_digest: "password", image: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Anne_boleyn.jpg")
-# User.create(first_name: "Katherine", last_name: "Howard", email: "mrsculpepper@example.com", password_digest: "password", image: "https://onthetudortrail.com/Blog/wp-content/uploads/2014/08/kh.jpg")
-# User.create(first_name: "Isabella", last_name: "Thorpe", email: "izzythorpe@example.com", password_digest: "password", image: "https://static.wikia.nocookie.net/janeausten/images/6/69/Dfa06738fad32444b18adfbabf2d62e7.jpg/revision/latest?cb=20170428153345")
-# User.create(first_name: "Eleanor", last_name: "Tilney", email: "etilney@example.com", password_digest: "password", image: "https://i.pinimg.com/originals/61/cd/f8/61cdf8fa82bda6fb07467b7c475c9688.jpg")
-# User.create(first_name: "Jane", last_name: "Boleyn", email: "ladyrochford@example.com", password_digest: "password", image: "https://fyeahhistory.files.wordpress.com/2017/05/jane-b-for-header-e1494682476885.jpg?w=455")
+# Role.create(name: "Celebrant")
+# Role.create(name: "Merrymaker")
+
+# User.create(first_name: "Catherine", last_name: "Morland", email: "udolpho5ever@example.com", password_digest: BCrypt::Password.create("password"), image: "https://www.yorknotes.com/images/onlineguides/a-level/Northanger-Abbey/Catherine-Morland-with-bonnet.jpg")
+# User.create(first_name: "Anne", last_name: "Boleyn", email: "losingmyhead@example.com", password_digest: BCrypt::Password.create("password"), image: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Anne_boleyn.jpg")
+# User.create(first_name: "Katherine", last_name: "Howard", email: "mrsculpepper@example.com", password_digest: BCrypt::Password.create("password"), image: "https://onthetudortrail.com/Blog/wp-content/uploads/2014/08/kh.jpg")
+
+# User.create(first_name: "Isabella", last_name: "Thorpe", email: "izzythorpe@example.com", password_digest: BCrypt::Password.create("password"), image: "https://static.wikia.nocookie.net/janeausten/images/6/69/Dfa06738fad32444b18adfbabf2d62e7.jpg/revision/latest?cb=20170428153345")
+
+# User.create(first_name: "Eleanor", last_name: "Tilney", email: "etilney@example.com", password_digest: BCrypt::Password.create("password"), image: "https://i.pinimg.com/originals/61/cd/f8/61cdf8fa82bda6fb07467b7c475c9688.jpg")
+
+# User.create(first_name: "Jane", last_name: "Boleyn", email: "ladyrochford@example.com", password_digest: BCrypt::Password.create("password"), image: "https://fyeahhistory.files.wordpress.com/2017/05/jane-b-for-header-e1494682476885.jpg?w=455")
 
 # Cabal.create(name: "Headless Heauxsmen")
 # Cabal.create(name: "Ghoul Gang")
@@ -29,14 +35,3 @@
 # Member.create!(user_id: 6, cabal_id: 1, celebration_id: 2)
 # Member.create!(user_id: 6, cabal_id: 3, celebration_id: 3)
 # Member.create!(user_id: 3, cabal_id: 3, celebration_id: 3)
-
-# Role.create(name: "Celebrant")
-# Role.create(name: "Merrymaker")
-
-# Assignment.create(user_id: 1, role_id: 1)
-# Assignment.create(user_id: 2, role_id: 1)
-# Assignment.create(user_id: 3, role_id: 1)
-# Assignment.create(user_id: 3, role_id: 2)
-# Assignment.create(user_id: 4, role_id: 2)
-# Assignment.create(user_id: 5, role_id: 2)
-# Assignment.create(user_id: 6, role_id: 2)

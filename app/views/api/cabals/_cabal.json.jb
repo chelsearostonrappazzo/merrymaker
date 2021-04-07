@@ -1,0 +1,4 @@
+{
+  name: cabal.name,
+  members: cabal.users,
+}
