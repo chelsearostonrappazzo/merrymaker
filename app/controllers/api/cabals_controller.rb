@@ -15,10 +15,10 @@ class Api::CabalsController < ApplicationController
   def create
     @cabal = Cabal.new(
       name: params[:name],
-      user_id: current_user,
     )
     #happy/sad path
     if @cabal.save
+      current_user.cabal = @cabal.users
       render "show.json.jb"
     else
       render json: { errors: @cabal.errors.full_messages }, status: 406

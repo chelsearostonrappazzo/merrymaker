@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_07_203434) do
+ActiveRecord::Schema.define(version: 2021_04_09_145918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2021_04_07_203434) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "invitation_token"
+    t.index ["invitation_token"], name: "index_cabals_on_invitation_token", unique: true
   end
 
   create_table "celebrations", force: :cascade do |t|
@@ -35,6 +37,15 @@ ActiveRecord::Schema.define(version: 2021_04_07_203434) do
     t.string "status", default: "Planning"
     t.integer "cabal_id"
     t.integer "user_id"
+  end
+
+  create_table "invites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "cabal_id"
+    t.string "invitation_token"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["invitation_token"], name: "index_invites_on_invitation_token", unique: true
   end
 
   create_table "members", force: :cascade do |t|

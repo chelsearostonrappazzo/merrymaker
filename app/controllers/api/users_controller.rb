@@ -1,5 +1,10 @@
 class Api::UsersController < ApplicationController
+  def new
+    @token = params[:invitation_token]
+  end
+
   def create
+    @token = params[:invitation_token]
     user = User.new(
       first_name: params[:first_name],
       last_name: params[:last_name],
@@ -7,8 +12,14 @@ class Api::UsersController < ApplicationController
       password: params[:password],
       password_confirmation: params[:password_confirmation],
     )
+
     if user.save
-      render json: { message: "User created successfully" }, status: :created
+      render json: { message: "User created successfully! Welcome!" }, status: :created
+      if @token != nil
+        group = Invite.find_by(invitation_token: @token).members
+        user.members.push(group)
+        render json: { message: "You've been added to #{Cabal.find_by_token(@token).name}! Welcome!" }, status: :created
+      end
     else
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
