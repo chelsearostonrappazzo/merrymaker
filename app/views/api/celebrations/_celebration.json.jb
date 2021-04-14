@@ -1,5 +1,6 @@
 {
   id: celebration.id,
+  user_id: celebration.user_id,
   name: celebration.name,
   celebrant: celebration.user.first_name,
   occasion: celebration.occasion,

@@ -4,7 +4,7 @@ class Api::CelebrationsController < ApplicationController
 
   def index
     # @celebrations = Celebration.all
-    @celebrations = current_user.celebrations
+    @celebrations = current_user.celebrations.where(status: "Planning")
     render "index.json.jb"
   end
 
@@ -57,5 +57,12 @@ class Api::CelebrationsController < ApplicationController
     else
       render json: { errors: "This isn't about you! Only the Celebrant can update!" }
     end
+  end
+
+  def destroy
+    @celebration_id = params[:id]
+    @celebration = Ceelbration.find(@celebration_id)
+    @celebration.status = "Completed"
+    @celebration.save
   end
 end
