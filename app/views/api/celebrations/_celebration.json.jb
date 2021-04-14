@@ -1,4 +1,5 @@
 {
+  id: celebration.id,
   name: celebration.name,
   celebrant: celebration.user.first_name,
   occasion: celebration.occasion,

@@ -1,4 +1,5 @@
 {
+  id: cabal.id,
   name: cabal.name,
   invitation_token: cabal.invitation_token,
   members: cabal.users,

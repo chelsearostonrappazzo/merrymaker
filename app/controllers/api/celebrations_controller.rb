@@ -3,6 +3,7 @@ class Api::CelebrationsController < ApplicationController
   # before_action :authenticate_admin, except: [:index, :show]
 
   def index
+    # @celebrations = Celebration.all
     @celebrations = current_user.celebrations
     render "index.json.jb"
   end
@@ -15,6 +16,7 @@ class Api::CelebrationsController < ApplicationController
 
   def create
     @celebration = Celebration.new(
+      user_id: current_user.id,
       name: params[:name],
       occasion: params[:occasion],
       theme: params[:theme],
