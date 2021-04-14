@@ -15,6 +15,7 @@ class Api::CelebrationsController < ApplicationController
   end
 
   def create
+    status = "planning"
     @celebration = Celebration.new(
       user_id: current_user.id,
       name: params[:name],
@@ -25,6 +26,7 @@ class Api::CelebrationsController < ApplicationController
       location: params[:location],
       activity: params[:activity],
       notes: params[:notes],
+      status: status,
     )
     #happy/sad path
     if @celebration.save
@@ -36,7 +38,7 @@ class Api::CelebrationsController < ApplicationController
 
   def update
     celebration_id = params[:id]
-    @celebration = Celebration.find(celebration_id)
+    @celebration = Celebration.find_by(id: celebration_id)
     if current_user.id == @celebration.user.id
       @celebration.name = params[:name] || @celebration.name
       @celebration.occasion = params[:occasion] || @celebration.occasion

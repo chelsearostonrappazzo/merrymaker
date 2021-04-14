@@ -11,5 +11,6 @@
   notes: celebration.notes,
   cabal: celebration.cabal.name,
   members: celebration.users,
+  status: celebration.status,
 
 }
