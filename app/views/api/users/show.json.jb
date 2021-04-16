@@ -5,4 +5,5 @@
   email: @user.email,
   image: @user.image,
   cabals: @user.cabals,
-  celebrations: @user.celebrations }
+}
+  # celebrations: @user.celebrations }

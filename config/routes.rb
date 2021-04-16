@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     post "/users" => "users#create"
     get "/users/:id" => "users#show"
     patch "/users/:id" => "users#update"
+
+    post "/users/:id" => "users#invite_member"
+
     # post "/invites/:invitation_token" => "users#create"
     post "/invites" => "invites#create"
     get "/invites" => "invites#index"

@@ -3,8 +3,8 @@ class Api::CelebrationsController < ApplicationController
   # before_action :authenticate_admin, except: [:index, :show]
 
   def index
-    # @celebrations = Celebration.all
-    @celebrations = current_user.celebrations.where(status: "Planning")
+    @celebrations = Celebration.all
+    # @celebrations = current_user.celebrations.where(status: "Planning")
     render "index.json.jb"
   end
 
@@ -15,9 +15,11 @@ class Api::CelebrationsController < ApplicationController
   end
 
   def create
-    status = "planning"
+    status = "Planning"
+    @cabal_id = params[:cabal_id]
     @celebration = Celebration.new(
       user_id: current_user.id,
+      cabal_id: @cabal_id,
       name: params[:name],
       occasion: params[:occasion],
       theme: params[:theme],

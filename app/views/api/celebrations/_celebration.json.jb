@@ -1,6 +1,7 @@
 {
   id: celebration.id,
   user_id: celebration.user_id,
+  cabal_id: celebration.cabal_id,
   name: celebration.name,
   celebrant: celebration.user.first_name,
   occasion: celebration.occasion,
@@ -11,7 +12,6 @@
   activity: celebration.activity,
   notes: celebration.notes,
   cabal: celebration.cabal.name,
-  members: celebration.users,
   status: celebration.status,
 
 }

@@ -19,7 +19,7 @@ class Api::CabalsController < ApplicationController
     #happy/sad path
     if @cabal.save
       @user = current_user.id
-      Member.create(cabal_id: @group.id, user_id: @user)
+      Member.create(cabal_id: @cabal.id, user_id: @user)
       render "show.json.jb"
     else
       render json: { errors: @cabal.errors.full_messages }, status: 406
@@ -40,7 +40,7 @@ class Api::CabalsController < ApplicationController
 
   def add
     @cabal = Cabal.find(params[:id])
-    @cabalmembers = current_user.members.create(cabal_id: @cabal, user_id: current_user.id)
-    render json: { members: "#{@cabalmembers}" }
+    @cabalmember = Member.create(cabal_id: @cabal, user_id: current_user.id)
+    render json: { members: "#{@cabalmember}" }
   end
 end

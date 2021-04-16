@@ -29,8 +29,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    user_id = params[:id]
-    @user = User.find(user_id)
+    @user = User.find(current_user.id)
     @user.last_name = params[:first_name] || @user.first_name
     @user.last_name = params[:last_name] || @user.last_name
     @user.email = params[:email] || @user.email
@@ -42,5 +41,18 @@ class Api::UsersController < ApplicationController
     else
       render json: { message: @user.errors.full_messages }, status: 406
     end
+  end
+
+  def invite_member
+    user = User.find(params[:user_id])
+    invite = Member.new(user_id: params[:user_id], cabal_id: params[:cabal_id], status: "pending")
+    if invite.save
+    else
+    end
+  end
+
+  def accept_invite
+    invite = Member.find(params[:id])
+    invite.status = "Accepted"
   end
 end
