@@ -2,5 +2,6 @@
   id: cabal.id,
   name: cabal.name,
   invitation_token: cabal.invitation_token,
+  invitation_url: "http://localhost:3000/api/cabals/#{cabal.invitation_token}",
   members: cabal.users,
 }

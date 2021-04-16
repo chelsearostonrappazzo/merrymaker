@@ -5,6 +5,4 @@ class Cabal < ApplicationRecord
   has_many :invites
   has_secure_token :invitation_token
 
-  def invititation
-  end
 end

@@ -13,7 +13,7 @@ class Api::UsersController < ApplicationController
     if user.save
       render json: { message: "User created successfully! Welcome!" }, status: :created
       # if @token != nil
-      #   group = Invite.find_by(invitation_token: @token).members
+      #   group = Cabal.find_by(invitation_token: @token).members
       #   user.members.push(group)
       #   render json: { message: "You've been added to #{Cabal.find_by_token(@token).name}! Welcome!" }, status: :created
       # end
