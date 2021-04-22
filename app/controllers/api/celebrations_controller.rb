@@ -67,4 +67,14 @@ class Api::CelebrationsController < ApplicationController
     @celebration.status = "Completed"
     @celebration.save
   end
+
+  # def current
+  #   @celebrations = Celebration.where(status: "Planning")
+  #   render "index.json.jb"
+  # end
+
+  # def past
+  #   @celebrations = Celebration.where(status: "Completed")
+  #   render "index.json.jb"
+  # end
 end
