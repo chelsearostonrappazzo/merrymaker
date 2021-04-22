@@ -1,10 +1,10 @@
 class Api::MembersController < ApplicationController
   def create
-    @member = Member.new(
-      user_id: params[:user_id],
-      cabal_id: params[:cabal_id],
-      celebration_id: params[:celebration_id],
-    )
-    @member.save
+    @membership = current_user.members.create(:cabal_id => params[:cabal_id])
+    if @membership.save
+      render json: { message: "You have joined this group!" }
+    else
+      render json: { errors: "Unable to join!" }, status: 406
+    end
   end
 end

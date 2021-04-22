@@ -38,9 +38,13 @@ class Api::CabalsController < ApplicationController
     end
   end
 
-  def add
+  def join
     @cabal = Cabal.find(params[:id])
-    @cabalmember = Member.create(cabal_id: @cabal, user_id: current_user.id)
-    render json: { members: "#{@cabalmember}" }
+    @cabalmember = @cabal.members.create!(user_id: current_user.id)
+    if @cabalmember.save
+      render json: { members: "#{@cabalmember}" }
+    else
+      render json: { message: "Unable to join!" }
+    end
   end
 end

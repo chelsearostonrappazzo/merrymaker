@@ -43,16 +43,16 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  def invite_member
-    user = User.find(params[:user_id])
-    invite = Member.new(user_id: params[:user_id], cabal_id: params[:cabal_id], status: "pending")
-    if invite.save
-    else
-    end
-  end
+  # def invite_member
+  #   user = User.find(params[:user_id])
+  #   invite = Member.new(user_id: params[:user_id], cabal_id: params[:cabal_id], status: "pending")
+  #   if invite.save
+  #   else
+  #   end
+  # end
 
-  def accept_invite
-    invite = Member.find(params[:id])
-    invite.status = "Accepted"
-  end
+  # def accept_invite
+  #   invite = Member.find(params[:id])
+  #   invite.status = "Accepted"
+  # end
 end

@@ -14,7 +14,8 @@ Rails.application.routes.draw do
     get "/invites" => "invites#index"
 
     post "/sessions" => "sessions#create"
-    get "/cabals/:id/add" => "cabals#add"
+
+    post "/cabals/:id/join" => "cabals#join"
     get "/cabals" => "cabals#index"
     get "/cabals/:id" => "cabals#show"
     post "/cabals" => "cabals#create"
