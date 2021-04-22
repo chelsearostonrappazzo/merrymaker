@@ -8,4 +8,15 @@ class Api::MembersController < ApplicationController
       render json: { errors: "Unable to join!" }, status: 406
     end
   end
+
+  def destroy
+    @membership = Member.find(params[:id])
+    @membership.destroy
+    render json: { message: "You left the group!" }
+  end
+
+  def index
+    @members = Member.all
+    render "index.json.jb"
+  end
 end

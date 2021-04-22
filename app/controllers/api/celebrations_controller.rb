@@ -63,7 +63,7 @@ class Api::CelebrationsController < ApplicationController
 
   def destroy
     @celebration_id = params[:id]
-    @celebration = Ceelbration.find(@celebration_id)
+    @celebration = Celebration.find(@celebration_id)
     @celebration.status = "Completed"
     @celebration.save
   end

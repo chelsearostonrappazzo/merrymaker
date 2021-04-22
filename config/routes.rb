@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
     post "/sessions" => "sessions#create"
     post "/members" => "members#create"
+    delete "/members/:id" => "members#destroy"
+    get "/members" => "members#index"
     # post "/cabals/join" => "cabals#join"
     get "/cabals" => "cabals#index"
     get "/cabals/:id" => "cabals#show"
@@ -24,5 +26,6 @@ Rails.application.routes.draw do
     get "/celebrations/:id" => "celebrations#show"
     post "/celebrations" => "celebrations#create"
     patch "/celebrations/:id" => "celebrations#update"
+    delete "/celebrations/:id" => "celebrations#destroy"
   end
 end
