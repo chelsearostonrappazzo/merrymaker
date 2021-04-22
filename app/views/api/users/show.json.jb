@@ -1,9 +1,9 @@
 { id: @user.id,
-  first_name: @user.first_name,
-  last_name: @user.last_name,
-  full_name: @user.full_name,
-  email: @user.email,
-  image: @user.image,
-  cabals: @user.cabals,
-}
-  # celebrations: @user.celebrations }
+ first_name: @user.first_name,
+ last_name: @user.last_name,
+ full_name: @user.full_name,
+ email: @user.email,
+ image: @user.image,
+ cabals: @user.cabals,
+ invite_token: @user.invite_token }
+# celebrations: @user.celebrations }
