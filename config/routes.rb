@@ -10,12 +10,15 @@ Rails.application.routes.draw do
     post "/sessions" => "sessions#create"
 
     post "/photos" => "photos#create"
+    get "/photos" => "photos#search"
+    get "/gallery" => "photos#index"
+
     post "/members" => "members#create"
     delete "/members/:id" => "members#destroy"
     get "/members" => "members#index"
+
     get "/moodboards" => "moodboards#index"
-    get "/photos" => "photos#search"
-    get "/gallery" => "photos#index"
+
     get "/cabals" => "cabals#index"
     get "/cabals/:id" => "cabals#show"
     post "/cabals" => "cabals#create"

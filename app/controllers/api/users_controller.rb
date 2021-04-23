@@ -14,11 +14,11 @@ class Api::UsersController < ApplicationController
       invitation = params[:invite_token]
       if invitation != nil
         cabal = Cabal.find_by(invitation_token: invitation)
-        Member.create!(user_id: @user.id, cabal_id: cabal.id)
-        render json: { message: "Welcome!" }, status: :created
+        @membership = @user.members.create(cabal_id: cabal.id)
       end
+      render "show.json.jb"
     else
-      render json: { errors: user.errors.full_messages }, status: :bad_request
+      render json: { errors: @user.errors.full_messages }, status: :bad_request
     end
   end
 
