@@ -7,16 +7,15 @@ Rails.application.routes.draw do
     get "/users/:id" => "users#show"
     patch "/users/:id" => "users#update"
 
-    # post "/users/:id" => "users#invite_member"
-    # post "/invites/:invitation_token" => "users#create"
-    # post "/invites" => "invites#create"
-    # get "/invites" => "invites#index"
-
     post "/sessions" => "sessions#create"
+
+    post "/photos" => "photos#create"
     post "/members" => "members#create"
     delete "/members/:id" => "members#destroy"
     get "/members" => "members#index"
-    # post "/cabals/join" => "cabals#join"
+
+    get "/photos" => "photos#search"
+
     get "/cabals" => "cabals#index"
     get "/cabals/:id" => "cabals#show"
     post "/cabals" => "cabals#create"

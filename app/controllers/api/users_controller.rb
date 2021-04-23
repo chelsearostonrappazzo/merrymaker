@@ -16,7 +16,7 @@ class Api::UsersController < ApplicationController
       if invitation != nil
         cabal = Cabal.find_by(invitation_token: invitation)
         @user.members.create!(cabal_id: cabal.id)
-        render json: { message: "You've been added to #{Cabal.find_by_token(@token).name}! Welcome!" }, status: :created
+        render json: { message: "Welcome!" }, status: :created
       end
     else
       render json: { errors: user.errors.full_messages }, status: :bad_request

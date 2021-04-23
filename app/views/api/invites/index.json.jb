@@ -1,3 +1,0 @@
-@invites.map do |invite|
-  render partial: "invite.json.jb", locals: { invite: invite }
-end

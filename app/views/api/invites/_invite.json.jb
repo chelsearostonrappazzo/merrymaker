@@ -1,5 +1,0 @@
-{
-  user_id: current_user.id,
-  cabal_id: invite.cabal_id,
-  invitation_url: "http://localhost:3000/api/invites/#{invite.invitation_token}",
-}
