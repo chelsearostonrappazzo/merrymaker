@@ -9,6 +9,7 @@ class Api::PhotosController < ApplicationController
   def create
     @photo = Photo.new(
       photo: params[:photo],
+      src_id: params[:src_id],
     )
     if @photo.save
       render json: { message: "Added to faves" }
