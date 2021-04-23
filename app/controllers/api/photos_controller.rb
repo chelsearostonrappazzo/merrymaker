@@ -12,9 +12,15 @@ class Api::PhotosController < ApplicationController
       src_id: params[:src_id],
     )
     if @photo.save
+      @moodboard = current_user.moodboards.create!(photo_id: @photo.id)
       render json: { message: "Added to faves" }
     else
       render json: { errors: photo.errors.full_messages }, status: :bad_request
     end
+  end
+
+  def index
+    @photos = Photo.all
+    render "index2.json.jb"
   end
 end

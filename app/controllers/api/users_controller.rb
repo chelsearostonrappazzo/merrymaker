@@ -1,6 +1,5 @@
 class Api::UsersController < ApplicationController
   def create
-    invitation = params[:invite_token]
     @user = User.new(
       first_name: params[:first_name],
       last_name: params[:last_name],
@@ -12,10 +11,10 @@ class Api::UsersController < ApplicationController
     )
 
     if @user.save
-      render json: { message: "User created successfully! Welcome!" }, status: :created
+      invitation = params[:invite_token]
       if invitation != nil
         cabal = Cabal.find_by(invitation_token: invitation)
-        @user.members.create!(cabal_id: cabal.id)
+        Member.create!(user_id: @user.id, cabal_id: cabal.id)
         render json: { message: "Welcome!" }, status: :created
       end
     else
@@ -43,17 +42,4 @@ class Api::UsersController < ApplicationController
       render json: { message: @user.errors.full_messages }, status: 406
     end
   end
-
-  # def invite_member
-  #   user = User.find(params[:user_id])
-  #   invite = Member.new(user_id: params[:user_id], cabal_id: params[:cabal_id], status: "pending")
-  #   if invite.save
-  #   else
-  #   end
-  # end
-
-  # def accept_invite
-  #   invite = Member.find(params[:id])
-  #   invite.status = "Accepted"
-  # end
 end

@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_many :members
   has_many :cabals, through: :members
+  has_many :moodboards
+  has_many :photos, through: :moodboards
   has_secure_password
   validates :email, presence: true, uniqueness: true
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_23_174003) do
+ActiveRecord::Schema.define(version: 2021_04_23_190401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(version: 2021_04_23_174003) do
 
   create_table "moodboards", force: :cascade do |t|
     t.integer "photo_id"
-    t.integer "celebration_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
   end
 
   create_table "photos", force: :cascade do |t|

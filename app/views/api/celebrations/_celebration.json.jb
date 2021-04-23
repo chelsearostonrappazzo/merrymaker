@@ -13,5 +13,6 @@
   notes: celebration.notes,
   cabal: celebration.cabal.name,
   status: celebration.status,
+  moodboard: celebration.user.photos,
 
 }

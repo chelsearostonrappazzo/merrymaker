@@ -1,0 +1,3 @@
+@moodboards.map do |moodboard|
+  { photos: moodboard.photos}
+end
