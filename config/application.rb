@@ -19,7 +19,7 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module UnZilla
+module MerryMaker
   class Application < Rails::Application
     config.generators.assets = false
     config.generators.helper = false
