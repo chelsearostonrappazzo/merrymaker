@@ -1,8 +1,10 @@
 class Api::PhotosController < ApplicationController
   def search
-    response = HTTP.get("https://pixabay.com/api/?key=#{Rails.application.credentials.pixabay_api[:api_key]}&q=#{params[:search]}&image_type=photo&pretty=true")
-    data = response.parse
-    @photos = data["hits"]
+    # response = HTTP.get("https://pixabay.com/api/?key=#{Rails.application.credentials.pixabay_api[:api_key]}&q=#{params[:search]}&image_type=photo&pretty=true")
+    # data = response.parse
+    # @photos = data["hits"]
+    response = Pexels::Client.new(Rails.application.credentials.pexels_api[:api_key])
+    @photos = response.photos.search(params[:search], size: "small")
     render "index.json.jb"
   end
 

@@ -16,7 +16,7 @@ class Api::UsersController < ApplicationController
         cabal = Cabal.find_by(invitation_token: invitation)
         @membership = @user.members.create(cabal_id: cabal.id)
       else
-        render json: { errors: @membership.errors.full_messages}
+        render "show.json.jb"
       end
       render "show.json.jb"
     else
