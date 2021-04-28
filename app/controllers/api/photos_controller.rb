@@ -4,7 +4,7 @@ class Api::PhotosController < ApplicationController
     # data = response.parse
     # @photos = data["hits"]
     response = Pexels::Client.new(Rails.application.credentials.pexels_api[:api_key])
-    @photos = response.photos.search(params[:search], size: "small")
+    @photos = response.photos.search(params[:search], per_page: 30)
     render "index.json.jb"
   end
 
@@ -12,6 +12,7 @@ class Api::PhotosController < ApplicationController
     @photo = Photo.new(
       photo: params[:photo],
       src_id: params[:src_id],
+      color: params[:color],
     )
     if @photo.save
       @moodboard = current_user.moodboards.create!(photo_id: @photo.id)
