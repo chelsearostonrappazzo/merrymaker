@@ -3,8 +3,7 @@ class Api::CelebrationsController < ApplicationController
   # before_action :authenticate_admin, except: [:index, :show]
 
   def index
-    @celebrations = Celebration.all
-    # @celebrations = current_user.celebrations.where(status: "Planning")
+    @celebrations = current_user.celebrations.all
     render "index.json.jb"
   end
 
