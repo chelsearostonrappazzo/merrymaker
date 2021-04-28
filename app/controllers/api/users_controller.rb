@@ -8,6 +8,7 @@ class Api::UsersController < ApplicationController
       invite_token: params[:invite_token],
       image: params[:image],
       password_confirmation: params[:password_confirmation],
+      quote: params[:password_confirmation],
     )
 
     if @user.save
@@ -36,6 +37,7 @@ class Api::UsersController < ApplicationController
     @user.last_name = params[:last_name] || @user.last_name
     @user.email = params[:email] || @user.email
     @user.image = params[:image] || @user.image
+    @user.quote = params[:quote] || @user.quote
 
     #happy/sad path
     if @user.save

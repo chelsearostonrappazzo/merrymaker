@@ -57,7 +57,7 @@ class Api::CelebrationsController < ApplicationController
         render json: { errors: @celebration.errors.full_messages }, status: 406
       end
     else
-      render json: { errors: "This isn't about you! Only the Celebrant can update!" }
+      render json: { errors: "This isn't about you! Only the Celebrant can update!" }, status: 403
     end
   end
 
