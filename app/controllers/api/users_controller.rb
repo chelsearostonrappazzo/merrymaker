@@ -25,15 +25,21 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  def show
+  def profile
     # user_id = params[:id]
     @user = User.find(current_user.id)
     render "show.json.jb"
   end
 
+  def show 
+    user_id = params[:id]
+    @user = User.find(user_id)
+    render "show.json.jb"
+  end
+
   def update
     @user = User.find(current_user.id)
-    @user.last_name = params[:first_name] || @user.first_name
+    @user.first_name = params[:first_name] || @user.first_name
     @user.last_name = params[:last_name] || @user.last_name
     @user.email = params[:email] || @user.email
     @user.password_digest = params[:password] || @user.password_digest
