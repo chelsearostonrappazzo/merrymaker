@@ -8,7 +8,8 @@ Rails.application.routes.draw do
     get "/profile" => "users#profile"
 
     patch "/users/:id" => "users#update"
-
+    post "/comments" => "comments#create"
+    get "/comments" => "comments#index"
     post "/sessions" => "sessions#create"
 
     post "/photos" => "photos#create"

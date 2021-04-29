@@ -1,0 +1,5 @@
+{ 
+  body: comment.body,
+  user: comment.user.first_name,
+  celebration: comment.celebration
+}

@@ -14,5 +14,5 @@
   cabal: celebration.cabal.name,
   status: celebration.status,
   photos: celebration.photos,
-
+  comments: celebration.comments,
 }

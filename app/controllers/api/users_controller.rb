@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
       invite_token: params[:invite_token],
       image: params[:image],
       password_confirmation: params[:password_confirmation],
-      quote: params[:password_confirmation],
+      quote: params[:quote],
     )
 
     if @user.save

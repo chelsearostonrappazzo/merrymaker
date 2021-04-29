@@ -9,4 +9,10 @@ class Api::CommentsController < ApplicationController
       render "show.json.jb"
     end
   end
+
+  def index 
+   
+    @comments = Comment.all
+    render "index.json.jb"
+  end
 end
