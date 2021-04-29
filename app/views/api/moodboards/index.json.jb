@@ -1,3 +1,4 @@
 @moodboards.map do |moodboard|
-  { photos: moodboard.photo}
+  { photos: moodboard.photo,
+  celebration: moodboard.celebration}
 end

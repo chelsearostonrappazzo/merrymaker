@@ -1,5 +1,7 @@
 @photos.map do |photo|
-  {src_id: photo.id,
+  {
+    src_id: photo.id,
     src: photo.src["medium"],
-    color: photo.avg_color,}
+    color: photo.avg_color,
+  }
 end

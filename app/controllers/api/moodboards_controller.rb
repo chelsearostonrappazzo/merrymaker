@@ -1,6 +1,6 @@
 class Api::MoodboardsController < ApplicationController
   def index
-    @moodboards = Moodboard.all
+    @moodboards = current_user.moodboards
     render "index.json.jb"
   end
 end

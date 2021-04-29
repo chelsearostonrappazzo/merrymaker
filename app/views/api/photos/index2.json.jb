@@ -1,5 +1,6 @@
 @photos.map do |photo|
-  {id: photo.id,
+  {
+    id: photo.id,
   url: photo.photo,
   src_id: photo.src_id,
 }

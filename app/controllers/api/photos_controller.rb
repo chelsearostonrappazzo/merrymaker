@@ -4,7 +4,7 @@ class Api::PhotosController < ApplicationController
     # data = response.parse
     # @photos = data["hits"]
     response = Pexels::Client.new(Rails.application.credentials.pexels_api[:api_key])
-    @photos = response.photos.search(params[:search], per_page: 30)
+    @photos = response.photos.search(params[:search], per_page: 50)
     render "index.json.jb"
   end
 
@@ -24,7 +24,7 @@ class Api::PhotosController < ApplicationController
   end
 
   def index
-    @photos = Photo.all
+    @photos = current_user.photos
     render "index2.json.jb"
   end
 end
