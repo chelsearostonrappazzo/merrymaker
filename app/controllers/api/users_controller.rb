@@ -36,6 +36,7 @@ class Api::UsersController < ApplicationController
     @user.last_name = params[:first_name] || @user.first_name
     @user.last_name = params[:last_name] || @user.last_name
     @user.email = params[:email] || @user.email
+    @user.password_digest = params[:password] || @user.password_digest
     @user.image = params[:image] || @user.image
     @user.quote = params[:quote] || @user.quote
 

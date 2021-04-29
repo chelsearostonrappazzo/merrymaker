@@ -31,6 +31,7 @@ class Api::CelebrationsController < ApplicationController
     )
     #happy/sad path
     if @celebration.save
+      current_user.guests.create(celebration_id: @celebration.id)
       render "show.json.jb"
     else
       render json: { errors: @celebration.errors.full_messages }, status: 406
