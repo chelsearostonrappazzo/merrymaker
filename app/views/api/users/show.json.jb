@@ -8,5 +8,6 @@
  cabals: @user.cabals,
  invite_token: @user.invite_token,
  quote: @user.quote,
-celebrations: @user.celebrations,
- photos: @user.photos}
+  celebrations: @user.celebrations,
+ photos: @user.photos
+}

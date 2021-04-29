@@ -1,9 +1,9 @@
 class Api::CommentsController < ApplicationController
   def create 
-    @celebration = Celebration.find(params[:celebration_id])
-    @comments = @celebration.comments.create!(
-      body: params[:text],
+    @comments = Comment.create!(
+      body: params[:body],
       user_id: current_user.id,
+      celebration_id: params[:celebration_id]
     )
     if @comment.save
       render "show.json.jb"

@@ -1,5 +1,5 @@
 { 
   body: comment.body,
-  user: comment.user.first_name,
+  user: comment.user,
   celebration: comment.celebration
 }
