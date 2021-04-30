@@ -3,5 +3,7 @@
     id: photo.id,
   url: photo.photo,
   src_id: photo.src_id,
+  color: photo.color
+
 }
 end

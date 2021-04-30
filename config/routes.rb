@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   namespace :api do
     post "/users" => "users#create"
     get "/users/:id" => "users#show"
+    patch "/users/:id" => "users#update"
     get "/profile" => "users#profile"
 
-    patch "/users/:id" => "users#update"
     post "/comments" => "comments#create"
     get "/comments" => "comments#index"
     post "/sessions" => "sessions#create"
@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     get "/members" => "members#index"
 
     get "/moodboards" => "moodboards#index"
+    delete "/moodboards/:id" => "moodboards#destory"
 
     get "/cabals" => "cabals#index"
     get "/cabals/:id" => "cabals#show"
