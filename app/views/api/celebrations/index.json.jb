@@ -1,3 +1,4 @@
 @celebrations.map do |celebration|
   render partial: "celebration.json.jb", locals: { celebration: celebration }
+
 end

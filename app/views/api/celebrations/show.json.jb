@@ -1,1 +1,7 @@
-render partial: "celebration.json.jb", locals: { celebration: @celebration }
+celebration = render partial: "celebration.json.jb", locals: { celebration: @celebration }
+
+celebration[:comments] = @celebration.comments.map do |comment|
+  render partial: "/api/comments/comment", locals: {comment: comment}
+end
+
+return celebration
