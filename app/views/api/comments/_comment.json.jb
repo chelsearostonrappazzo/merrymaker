@@ -1,4 +1,5 @@
 { 
+  id: comment.id,
   body: comment.body,
   user: comment.user,
   celebration: comment.celebration

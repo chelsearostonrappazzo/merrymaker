@@ -1,12 +1,14 @@
 class Api::CommentsController < ApplicationController
   def create 
-    @comments = Comment.create!(
+    @comment = Comment.new(
       body: params[:body],
       user_id: current_user.id,
       celebration_id: params[:celebration_id]
     )
     if @comment.save
       render "show.json.jb"
+    else
+      render json: {errors:  @comment.errors.full_messages}, status: 406
     end
   end
 
@@ -14,5 +16,11 @@ class Api::CommentsController < ApplicationController
    
     @comments = Comment.all
     render "index.json.jb"
+  end
+
+  def destroy 
+    @comment = Comment.find(params[:id])
+    @comment.destroy 
+    render json: {message: "Deleted!"}
   end
 end

@@ -26,7 +26,7 @@ class Api::CelebrationsController < ApplicationController
       signature_drink: params[:signature_drink],
       location: params[:location],
       activity: params[:activity],
-      notes: params[:notes],
+    
       status: status,
     )
     #happy/sad path
@@ -49,7 +49,6 @@ class Api::CelebrationsController < ApplicationController
       @celebration.signature_drink = params[:signature_drink] || @celebration.signature_drink
       @celebration.location = params[:location] || @celebration.location
       @celebration.activity = params[:activity] || @celebration.activity
-      @celebration.notes = params[:notes] || @celebration.notes
       @celebration.status = params[:status] || @celebration.status
       if @celebration.save
         render "show.json.jb"

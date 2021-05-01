@@ -10,7 +10,7 @@
   signature_drink: celebration.signature_drink,
   location: celebration.location,
   activity: celebration.activity,
-  notes: celebration.notes,
+
   cabal: celebration.cabal.name,
   status: celebration.status,
   photos: celebration.photos,

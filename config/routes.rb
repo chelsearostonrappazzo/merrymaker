@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
     post "/comments" => "comments#create"
     get "/comments" => "comments#index"
+    delete "/comments/:id" => "comments#destroy"
     post "/sessions" => "sessions#create"
 
     post "/photos" => "photos#create"
