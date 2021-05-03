@@ -10,16 +10,16 @@ class Api::UsersController < ApplicationController
       password_confirmation: params[:password_confirmation],
       quote: params[:quote],
     )
-
+  
     if @user.save
       invitation = params[:invite_token]
-      if invitation != nil
+      UserMailer.with(user: @user).welcome_email.deliver_later
+      if invitation.present?
         cabal = Cabal.find_by(invitation_token: invitation)
         @membership = @user.members.create(cabal_id: cabal.id)
       else
         render "show.json.jb"
       end
-      render "show.json.jb"
     else
       render json: { errors: @user.errors.full_messages }, status: :bad_request
     end
