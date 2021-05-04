@@ -10,7 +10,8 @@ class Api::MembersController < ApplicationController
   end
 
   def destroy
-    @membership = Member.find(params[:id])
+    @cabal = Cabal.find(params[:id])
+    @membership = @cabal.members.find_by(user_id: current_user)
     @membership.destroy
     render json: { message: "You left the group!" }
   end

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get "/users/:id" => "users#show"
     patch "/users/:id" => "users#update"
     get "/profile" => "users#profile"
+    get "/users" => "users#index"
 
     post "/comments" => "comments#create"
     get "/comments" => "comments#index"
@@ -21,6 +22,7 @@ Rails.application.routes.draw do
     delete "/members/:id" => "members#destroy"
     get "/members" => "members#index"
 
+    post "/guests" => "guests#create"
     get "/moodboards" => "moodboards#index"
     delete "/moodboards/:id" => "moodboards#destory"
 
@@ -34,5 +36,6 @@ Rails.application.routes.draw do
     post "/celebrations" => "celebrations#create"
     patch "/celebrations/:id" => "celebrations#update"
     delete "/celebrations/:id" => "celebrations#destroy"
+
   end
 end

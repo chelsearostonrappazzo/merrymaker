@@ -67,13 +67,13 @@ class Api::CelebrationsController < ApplicationController
     @celebration.save
   end
 
-  # def current
-  #   @celebrations = Celebration.where(status: "Planning")
-  #   render "index.json.jb"
-  # end
-
-  # def past
-  #   @celebrations = Celebration.where(status: "Completed")
-  #   render "index.json.jb"
-  # end
+  def add
+    @celebration = Celebration.find(params[:id])
+    @celebrationmember = @celebration.guests.create!(celebration_id: @celebration.id, user_id: params[:id])
+    if @celebrationmember.save
+      render json: { members: "#{@celebrationmember}" }
+    else
+      render json: { message: "Unable to join!" }
+    end
+  end
 end

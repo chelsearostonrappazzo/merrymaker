@@ -53,4 +53,9 @@ class Api::UsersController < ApplicationController
       render json: { message: @user.errors.full_messages }, status: 406
     end
   end
+  
+  def index
+    @users = User.all
+    render "index.json.jb"
+  end
 end

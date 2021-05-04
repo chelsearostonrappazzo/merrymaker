@@ -1,0 +1,13 @@
+{ id: user.id,
+  first_name: user.first_name,
+  last_name: user.last_name,
+  full_name: user.full_name,
+  password: user.password_digest,
+  email: user.email,
+  image: user.image,
+  cabals: user.cabals,
+  invite_token: user.invite_token,
+  quote: user.quote,
+   celebrations: user.celebrations,
+  photos: user.photos
+ }
