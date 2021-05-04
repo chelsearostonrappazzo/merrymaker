@@ -15,4 +15,5 @@
   status: celebration.status,
   photos: celebration.photos,
   comments: celebration.comments,
+  guests: celebration.users,
 }
