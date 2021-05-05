@@ -1,4 +1,5 @@
 class Api::PhotosController < ApplicationController
+  before_action :authenticate_user  
   def search
     # response = HTTP.get("https://pixabay.com/api/?key=#{Rails.application.credentials.pixabay_api[:api_key]}&q=#{params[:search]}&image_type=photo&pretty=true")
     # data = response.parse

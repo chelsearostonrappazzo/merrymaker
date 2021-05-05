@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_admin
-    unless current_user && current_user.admin
+    unless current_user && current_user.celebrations.where(user_id: current_user.id)
       render json: { error: "This isn't about you! Celebrant Access Only" }, status: :unauthorized
     end
   end

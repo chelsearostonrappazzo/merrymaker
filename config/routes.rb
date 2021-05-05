@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
     post "/guests" => "guests#create"
     get "/moodboards" => "moodboards#index"
-    delete "/moodboards/:id" => "moodboards#destory"
+    delete "/moodboards/:id" => "moodboards#destroy"
 
     get "/cabals" => "cabals#index"
     get "/cabals/:id" => "cabals#show"

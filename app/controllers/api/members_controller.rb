@@ -1,4 +1,6 @@
 class Api::MembersController < ApplicationController
+  before_action :authenticate_user
+
   def create
     @cabal = Cabal.find_by(invitation_token: params[:invitation_token])
     @membership = current_user.members.create(cabal_id: @cabal.id)
@@ -11,7 +13,7 @@ class Api::MembersController < ApplicationController
 
   def destroy
     @cabal = Cabal.find(params[:id])
-    @membership = @cabal.members.find_by(user_id: current_user)
+    @membership = @cabal.members.find_by(user_id: current_user.id)
     @membership.destroy
     render json: { message: "You left the group!" }
   end

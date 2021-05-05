@@ -1,4 +1,7 @@
 class Api::CommentsController < ApplicationController
+  before_action :authenticate_user
+
+
   def create 
     @comment = Comment.new(
       body: params[:body],
