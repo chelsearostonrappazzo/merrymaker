@@ -1,6 +1,6 @@
 class Api::CabalsController < ApplicationController
   before_action :authenticate_user
-  before_action :authenticate_admin, except: [:index, :show]
+  
   def index
     @cabals = current_user.cabals
     render "index.json.jb"
