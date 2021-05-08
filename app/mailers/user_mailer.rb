@@ -3,7 +3,7 @@ class UserMailer < ApplicationMailer
 
   def welcome_email 
     @user = params[:user]
-    @url = 'localhost:8080/login/'
+    @url = 'merrymaker.netlify.app/login'
     mail(to: @user.email, subject: "Welcome to Merrymaker")
   end
 end
