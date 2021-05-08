@@ -45,3 +45,6 @@ gem 'rack-cors'
 gem 'jb'
 gem 'jwt'
 gem 'pexels'
+
+bundle lock
+remote:        --add-platform x86_64-linux
