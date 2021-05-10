@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dqle7noyk
+  api_key: '534929821614911'
+  api_secret: kRi9AA57GmW4ZVfOBmdTroEtqcw
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dqle7noyk
+  api_key: '534929821614911'
+  api_secret: kRi9AA57GmW4ZVfOBmdTroEtqcw
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dqle7noyk
+  api_key: '534929821614911'
+  api_secret: kRi9AA57GmW4ZVfOBmdTroEtqcw
+  enhance_image_tag: true
+  static_file_support: false
