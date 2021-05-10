@@ -7,7 +7,7 @@ class Api::UsersController < ApplicationController
       email: params[:email],
       password: params[:password],
       invite_token: params[:invite_token],
-      image: params[:image],
+      profile_image: params[:profile_image],
       password_confirmation: params[:password_confirmation],
       quote: params[:quote],
     )
@@ -44,7 +44,7 @@ class Api::UsersController < ApplicationController
     @user.last_name = params[:last_name] || @user.last_name
     @user.email = params[:email] || @user.email
     @user.password_digest = params[:password] || @user.password_digest
-    @user.image = params[:image] || @user.image
+    @user.profile_image = params[:profile_image] || @user.profile_image
     @user.quote = params[:quote] || @user.quote
 
     #happy/sad path
