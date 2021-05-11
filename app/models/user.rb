@@ -1,6 +1,5 @@
 class User < ApplicationRecord
   has_many :members
-  has_one_attached :profile_image, service: :cloudinary
   has_many :cabals, through: :members
   has_many :moodboards
   has_many :photos, through: :moodboards

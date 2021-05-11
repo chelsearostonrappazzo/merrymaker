@@ -4,7 +4,6 @@
   full_name: user.full_name,
   password: user.password_digest,
   email: user.email,
-  profile_image: user.profile_image,
   cabals: user.cabals,
   invite_token: user.invite_token,
   quote: user.quote,
