@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :guests
   has_many :celebrations, through: :guests 
   has_many :comments
+  has_one_attached :iavatar
   has_secure_password
   validates :email, presence: true, uniqueness: true
 

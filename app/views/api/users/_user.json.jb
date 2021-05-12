@@ -9,5 +9,6 @@
   invite_token: user.invite_token,
   quote: user.quote,
    celebrations: user.celebrations,
-  photos: user.photos
+  photos: user.photos,
+  avatar: user.avatar
  }

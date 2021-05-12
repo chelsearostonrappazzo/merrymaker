@@ -45,3 +45,5 @@ gem 'rack-cors'
 gem 'jb'
 gem 'jwt'
 gem 'pexels'
+gem 'google-cloud-storage', require: false
+gem 'dotenv-rails', '~> 2.7'
