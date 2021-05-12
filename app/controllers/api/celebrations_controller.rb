@@ -1,5 +1,5 @@
 class Api::CelebrationsController < ApplicationController
-  before_action :authenticate_user
+ 
   
 
   def index
