@@ -24,6 +24,21 @@ class Api::PhotosController < ApplicationController
     end
   end
 
+  def upload 
+    celebration_id = params[:celebration_id]
+    @photo = Photo.new(
+      photo: params[:photo]
+    )
+
+    if @photo.save 
+      @ceelbrationphoto = current_user.celebrationphotos.create!(photo_id: @photo.id, celebration_id: celebration_id)
+      render json: {message: "Added to Board"}
+    else 
+      render json: {errors: photo.errors.full_messages }, status: :bad_request
+
+    end
+  end
+
   def index
     @photos = current_user.photos
     render "index2.json.jb"

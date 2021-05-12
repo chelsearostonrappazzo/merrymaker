@@ -17,7 +17,8 @@ Rails.application.routes.draw do
     post "/photos" => "photos#create"
     get "/photos" => "photos#search"
     get "/gallery" => "photos#index"
-
+    post "/resultphotos" => "photos#upload"
+    
     post "/members" => "members#create"
     delete "/members/:id" => "members#destroy"
     get "/members" => "members#index"
