@@ -43,7 +43,7 @@ class Api::UsersController < ApplicationController
     @user.last_name = params[:last_name] || @user.last_name
     @user.email = params[:email] || @user.email
     @user.password_digest = params[:password] || @user.password_digest
-    @user.avatar = @user.avatar.attach(params[:avatar]) || @user.avatar
+    # @user.avatar = @user.avatar.attach(params[:avatar]) || @user.avatar
     @user.quote = params[:quote] || @user.quote
 
     #happy/sad path
