@@ -22,12 +22,12 @@ local:
 google_dev:
   service: GCS
   project: MerryMaker
-  credentials: <%= Rails.application.credentials.gcskey.as_json %>
+  credentials: <%= Rails.application.credentials.gcskey.to_json %>
   bucket: test-434
 google:
   service: GCS
   project: MerryMaker
-  credentials: <%= Rails.application.credentials.gcskey.as_json %>
+  credentials: <%= Rails.application.credentials.gcskey.to_json %>
   bucket: test-434
 # Use rails credentials:edit to set the Azure Storage secret (as azure_storage:storage_access_key)
 # microsoft:
