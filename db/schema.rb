@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_10_182632) do
+ActiveRecord::Schema.define(version: 2021_05_12_232359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,14 @@ ActiveRecord::Schema.define(version: 2021_05_10_182632) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "invitation_token"
     t.index ["invitation_token"], name: "index_cabals_on_invitation_token", unique: true
+  end
+
+  create_table "celebration_photos", force: :cascade do |t|
+    t.integer "photo_id"
+    t.integer "user_id"
+    t.integer "celebration_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "celebrations", force: :cascade do |t|

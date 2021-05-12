@@ -1,7 +1,5 @@
 class Api::CelebrationsController < ApplicationController
  
-  
-
   def index
     @celebrations = current_user.celebrations.all
     render "index.json.jb"
