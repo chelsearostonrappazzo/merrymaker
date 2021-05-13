@@ -31,7 +31,7 @@ class Api::PhotosController < ApplicationController
     )
 
     if @photo.save 
-      @ceelbrationphoto = current_user.celebrationphotos.create!(photo_id: @photo.id, celebration_id: celebration_id)
+      @ceelbrationphoto = current_user.celebration_photos.create!(photo_id: @photo.id, celebration_id: celebration_id)
       render json: {message: "Added to Board"}
     else 
       render json: {errors: photo.errors.full_messages }, status: :bad_request
