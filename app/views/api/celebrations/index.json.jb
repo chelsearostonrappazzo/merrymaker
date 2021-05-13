@@ -1,15 +1,15 @@
 @celebrations.map do |celebration|
-  celebrations = render partial: "celebration.json.jb", locals: { celebration: celebration }
+  c = render partial: "celebration.json.jb", locals: { celebration: celebration }
 
-  celebrations[:moodboards] = celebration.moodboards.map do |moodboard| 
+  c[:moodboards] = celebration.moodboards.map do |moodboard| 
     render partial: "/api/moodboards/moodboard", locals: {moodboard: moodboard}
   end
 
-  celebrations[:celebration_photos] = celebration.celebration_photos.map do |celebration_photo| 
+  c[:celebration_photos] = celebration.celebration_photos.map do |celebration_photo| 
     render partial: "/api/celebration_photos/celebration_photo", locals: {celebration_photo: celebration_photo}
   end
 
-  return celebrations
-  
+  return c
+
 end
 
