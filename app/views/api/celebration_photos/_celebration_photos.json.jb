@@ -1,0 +1,8 @@
+{
+  id: celebration_photo.id,
+  photo: celebration_photo.photo,
+  photo_id: celebration_photo.photo_id,
+  user_id: celebration_photo.user_id,
+  celebration: celebration_photo.photo,
+  celebration_id: celebration_photo.celebration_id,
+}

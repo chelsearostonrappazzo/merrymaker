@@ -4,4 +4,12 @@ celebration[:comments] = @celebration.comments.map do |comment|
   render partial: "/api/comments/comment", locals: {comment: comment}
 end
 
+celebration[:moodboards] = @celebration.moodboards.map do |moodboard|
+  render partial: "/api/moodboards/moodboard", locals: {moodboard: moodboard}
+end
+
+celebration[:celebration_photos] = @celebration.celebration_photos.map do |celebration_photo|
+  render partial: "/api/celebration_photos/celebration_photo", locals: {celebration_photo: celebration_photo}
+end
+
 return celebration

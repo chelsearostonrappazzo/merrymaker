@@ -1,0 +1,3 @@
+@celebration_photos.map do |celebration_photo|
+  render partial: "celebration_photo.json.jb", locals: { celebration_photo: celebration_photo }
+end

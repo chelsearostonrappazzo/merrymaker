@@ -13,7 +13,7 @@
   cabal: celebration.cabal.name,
   status: celebration.status,
   moodboards: celebration.moodboards,
-  celebrationphotos: celebration.celebration_photos,
+  celebration_photos: celebration.celebration_photos,
   comments: celebration.comments,
   guests: celebration.users,
 }
