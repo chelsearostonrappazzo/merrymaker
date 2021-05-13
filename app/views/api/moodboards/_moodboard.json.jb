@@ -1,6 +1,6 @@
 { id: moodboard.id,
-  photo: moodboard.photo,
-  photo_id: moodboard.photo_id,
+photo: moodboard.photo,
+photo_id: moodboard.photo_id,
 celebration: moodboard.celebration,
 user_id: moodboard.user_id,
 user: moodboard.user,
