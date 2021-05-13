@@ -9,3 +9,5 @@
     render partial: "/api/celebration_photos/celebration_photo", locals: {celebration_photo: celebration_photo}
   end
 end
+
+return celebrations
