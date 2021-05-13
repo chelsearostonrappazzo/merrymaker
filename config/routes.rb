@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     get "/moodboards" => "moodboards#index"
     delete "/moodboards/:id" => "moodboards#destroy"
 
+    get "/celebrationphotos" => "celebration_photos#index"
     get "/cabals" => "cabals#index"
     get "/cabals/:id" => "cabals#show"
     post "/cabals" => "cabals#create"
