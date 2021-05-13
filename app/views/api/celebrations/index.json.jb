@@ -8,6 +8,6 @@
   celebrations[:celebration_photos] = celebration.celebration_photos.map do |celebration_photo| 
     render partial: "/api/celebration_photos/celebration_photo", locals: {celebration_photo: celebration_photo}
   end
+  return celebrations
 end
 
-return celebrations
