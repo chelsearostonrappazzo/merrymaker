@@ -1,14 +1,14 @@
 @celebrations.map do |celebration|
-  c = render partial: "celebration.json.jb", locals: { celebration: celebration }
+  render partial: "celebration.json.jb", locals: { celebration: celebration }
 
-  c[:moodboards] = celebration.moodboards.map do |moodboard| 
-    render partial: "/api/moodboards/moodboard", locals: {moodboard: moodboard}
-  end
+  # c[:moodboards] = celebration.moodboards.map do |moodboard| 
+  #   render partial: "/api/moodboards/moodboard", locals: {moodboard: moodboard}
+  # end
 
-  c[:celebration_photos] = celebration.celebration_photos.map do |celebration_photo| 
-    render partial: "/api/celebration_photos/celebration_photo", locals: {celebration_photo: celebration_photo}
-  end
+  # c[:celebration_photos] = celebration.celebration_photos.map do |celebration_photo| 
+  #   render partial: "/api/celebration_photos/celebration_photo", locals: {celebration_photo: celebration_photo}
+  # end
 
-  return c
+  # return c
 end
 
