@@ -12,7 +12,8 @@
   activity: celebration.activity,
   cabal: celebration.cabal.name,
   status: celebration.status,
-  photos: celebration.photos,
+  photos: celebration.moodboards,
+  celebrationphotos: celebration.celebration_photos,
   comments: celebration.comments,
   guests: celebration.users,
 }
