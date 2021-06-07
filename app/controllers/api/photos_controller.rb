@@ -4,6 +4,8 @@ class Api::PhotosController < ApplicationController
     # response = HTTP.get("https://pixabay.com/api/?key=#{Rails.application.credentials.pixabay_api[:api_key]}&q=#{params[:search]}&image_type=photo&pretty=true")
     # data = response.parse
     # @photos = data["hits"]
+    #tested both with HTTP gem and with PEXELS ruby wrapper
+    # response = HTTP.get("https://api.pexels.com/v1/search?query=#{params[:search]}&per_page=50")
     response = Pexels::Client.new(Rails.application.credentials.pexels_api[:api_key])
     @photos = response.photos.search(params[:search], per_page: 50)
     render "index.json.jb"
